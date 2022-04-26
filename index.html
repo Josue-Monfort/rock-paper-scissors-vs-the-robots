@@ -41,7 +41,7 @@
       <div id="robotSide">
         <div class="speechBubbleAndScore">
           <div id="reverseBubble" class="bubble">
-            <img id="reverseBubbleImg" src="img/speech/speech-empty.png" alt="">
+            <img id="reverseBubbleImg" src="img/speech/speech-empty.png" alt="An empty speech bubble">
           </div>
           <div class="scoreKeeper">
             <p id="robotPointsDisplay">0</p>
@@ -49,11 +49,29 @@
           </div>
         </div>
         <div id="robotChar">
-          <img src="img/chars/robot.gif" alt="">
+          <img src="img/chars/robot.gif" alt="Cute robot pixel art character">
         </div>
       </div>
       </div>
     </section>
+    <!--------------BOTTOM SECTION----------------->
+    <section id="bottomSection">
+      <div>
+        <p id="resultDisplay">Select one!</p>
+      </div>
+      <div id="handSelect">
+        <img title="rock" class="buttons" id="rock" src="img/hands/select-rock1.png" 
+        onmouseover="this.src='img/hands/select-rock2.png'" 
+        onmouseout="this.src='img/hands/select-rock1.png'"/>
+        <img title="paper" class="buttons" id="paper" src="img/hands/select-paper1.png" 
+        onmouseover="this.src='img/hands/select-paper2.png'" 
+        onmouseout="this.src='img/hands/select-paper1.png'"/>
+        <img title="scissors" class="buttons" id="scissors" src="img/hands/select-scissors1.png" 
+        onmouseover="this.src='img/hands/select-scissors2.png'" 
+        onmouseout="this.src='img/hands/select-scissors1.png'"/>
+      </div>
+    </section>
+
     <script src="index.js"></script>
   </body>
 </html>
