@@ -1,0 +1,82 @@
+:root {
+    --clr-font-primary: rgb(165, 0, 0);
+}
+
+@font-face {
+    font-family: "BROKEN CONSOLE";
+    src: url('../font/Broken\ Console\ Bold.otf');
+    src: local('BROKEN CONSOLE'), url('../font/Broken\ Console\ Bold.otf') format('otf'), url('../font/Broken\ Console\ Bold.ttf') format('truetype');
+}
+
+*, 
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "BROKEN CONSOLE", 'Times New Roman', Times, serif;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 100vh;
+    opacity: 0;
+    transition: all 3s;
+}
+
+
+body.fade {
+    opacity: 1;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+h1 {
+    font-size: 5.5rem;
+    color: var(--clr-font-primary);
+    text-shadow: -6px 0 black;
+}
+
+h2 {
+    font-size: 3.0rem;
+    color: var(--clr-font-primary);
+    text-shadow: -4px 0 black;
+}
+
+p {
+    font-size: 1.3rem;
+    color: var(--clr-font-primary);
+    text-shadow: -2px 0 black;
+}
+
+img {
+    height: 15em;
+    width: auto;
+}
+
+button {
+    background-color: rgb(52, 25, 150);
+    font-size: 1.3rem;
+    padding: 10px 10px 5px;
+    border-radius: 5px;
+    color: white;
+    border: transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(91, 59, 206);
+}
