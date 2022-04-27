@@ -25,7 +25,16 @@
 
 body {
     margin: 0 14em;
-    font-family: "BROKEN CONSOLE", 'Times New Roman', Times, serif
+    font-family: "BROKEN CONSOLE", 'Times New Roman', Times, serif;
+    transition: all 2s;
+}
+
+body.disable {  
+    pointer-events: none;
+}
+
+body.fade {
+    opacity: 0;
 }
 
 /* -------------------------------- */

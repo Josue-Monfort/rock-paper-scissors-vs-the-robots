@@ -1,4 +1,4 @@
-const allHandsButtons = document.querySelectorAll(".buttons"); // selects all the rock paper scissors buttons at the bottom
+const allButtons = document.querySelectorAll(".buttons"); // selects all the rock paper scissors buttons at the bottom
 const resultDisplay = document.querySelector("#resultDisplay");
 const playerPointsDisplay = document.querySelector("#playerPointsDisplay"); // PLAYER POINTS
 const robotPointsDisplay = document.querySelector("#robotPointsDisplay"); // ROBOT POINTS
@@ -9,12 +9,24 @@ let playerPoints = 0;
 let robotPoints = 0;
 
 // Adds a click event listener to all buttons
-allHandsButtons.forEach(button => {
+allButtons.forEach(button => {
     // will get the player choice when they click the button
     button.addEventListener("click", (playerChoice) => {
         getRoundResult(playerChoice.target.id, getRobotChoice())
+        if (playerPoints === 5) showWinnerPage("playerWon");
+        if (robotPoints === 5) showWinnerPage("robotWon")
     })
 })
+
+function showWinnerPage(winner) {
+    document.body.classList.toggle("disable")
+    setTimeout(() => {
+        document.body.classList.toggle("fade")
+    }, 500)
+    setTimeout(() => {
+        window.location.href = `${winner}.html`;
+    }, 2300)
+}
 
 // Makes a random choice between rock, paper and scissors
 function getRobotChoice() {
