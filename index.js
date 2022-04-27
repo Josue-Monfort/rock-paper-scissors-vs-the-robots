@@ -5,8 +5,7 @@ const resultDisplay = document.querySelector("#resultDisplay");
 allHandsButtons.forEach(button => {
     // will get the player choice when they click the button
     button.addEventListener("click", (playerChoice) => {
-        console.log(playerChoice.target.id);
-        drawRound()
+        getRoundResult(playerChoice.target.id, getRobotChoice())
     })
 })
 
@@ -25,12 +24,38 @@ function playerWonRound() {
 
 // Makes the display show the result: robot won
 function robotWonRound() {
-    resultDisplay.textContent = "Robot won this round!"
+    resultDisplay.textContent = "Robot won this round!";
     resultDisplay.style.color = "red";
 }
 
-// No winners this round
+// No winner this round
 function drawRound() {
-    resultDisplay.textContent = "Neither side won, it's a tie!"
+    resultDisplay.textContent = "Neither side won, it's a tie!";
     resultDisplay.style.color = "black";
+}
+
+// Will get the player input and compare with the robot choice
+// then it will evaluate and show the result.
+function getRoundResult(playerChoice, robotChoice) {
+    if (playerChoice === robotChoice) {
+        return drawRound();
+    }
+    if (playerChoice === "rock" && robotChoice === "scissors") {
+        return playerWonRound();
+    } 
+    if (playerChoice === "rock" && robotChoice === "paper") {
+        return robotWonRound();
+    }
+    if (playerChoice === "paper" && robotChoice === "scissors") {
+        return robotWonRound();
+    }
+    if (playerChoice === "paper" && robotChoice === "rock") {
+        return playerWonRound();
+    }
+    if (playerChoice === "scissors" && robotChoice === "paper") {
+        return playerWonRound();
+    }
+    if (playerChoice === "scissors" && robotChoice === "rock") {
+        return robotWonRound();
+    }
 }
